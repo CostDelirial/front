@@ -1,9 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="authContainer">
+    <div class="containerLogin">
+      <ion-img src="../../../assets/images/logoAuth.png"></ion-img>
+      <h5 class="titleLogin">Inicia sesión</h5>
 
+      <div class="formLogin">
+        <ion-item>
+          <ion-label position="stacked" class="labelAuth">Email</ion-label>
+          <ion-input type="email" placeholder="example@email.com"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" class="labelAuth">Contraseña</ion-label>
+          <ion-input #passwordEyeLogin [type]="passwordTypeInput"></ion-input>
+          <button  item-end  class="btn_eye_icon"  (click)="togglePasswordMode()">
+            <ion-icon  [name]="(passwordTypeInput === 'text')?'eye-off':'eye'"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-button expand="block" class="btnAuth" (click)="login()">Ingresar</ion-button>
+      </div>
+
+      <div class="footerAuth">
+        <a href="/auth/register">¿No tienes cuenta? <span>Registrate</span></a>
+      </div>
+    </div>
+  </div>
 </ion-content>
