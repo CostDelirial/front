@@ -1,9 +1,42 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="authContainer">
+    <div class="imgRegister">
+      <ion-img src="../../../assets/images/logo.png"></ion-img>
+    </div>
+    <div>
+      <h5>Regístrate</h5>
+      <ion-item>
+        <ion-label position="stacked" class="labelAuth">Nombre completo</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="labelAuth">Nombre del taller</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="labelAuth">Teléfono</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="labelAuth">Email</ion-label>
+        <ion-input type="email" placeholder="example@email.com"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="labelAuth">Contraseña</ion-label>
+        <ion-input #passwordEyeLogin [type]="passwordTypeInput"></ion-input>
+        <button  item-end  class="btn_eye_icon"  (click)="togglePasswordMode()">
+          <ion-icon  [name]="(passwordTypeInput === 'text')?'eye-off':'eye'"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="labelAuth">Confirma tu contraseña</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <ion-button expand="block" class="btnAuth">Registrar</ion-button>
+    </div>
 
+    <div class="footerAuth">
+      <a href="/auth/login">¿Ya tienes cuenta? <span>Ingresa aquí</span></a>
+    </div>
+  </div>
 </ion-content>
