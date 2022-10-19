@@ -19,12 +19,17 @@ const routes: Routes = [{
       loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
     },
     {
+      path: 'logout',
+      loadChildren: () => import('./logout/logout.module').then( m => m.LogoutPageModule)
+    },
+    {
       path: '',
       redirectTo: 'login',
       pathMatch: 'full'
     }
   ]
-},]  
+}]  
+  
 
 
 @NgModule({

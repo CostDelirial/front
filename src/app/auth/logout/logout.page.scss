@@ -1,0 +1,21 @@
+.welcomeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+p {
+    font-family: 'SourceSansBold';
+    font-size: 20px;
+    color: #333333;
+    text-align: center;
+    margin-top: 50px;
+}
+
+ion-spinner {
+    padding-top: 30%;
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+}
