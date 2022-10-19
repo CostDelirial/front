@@ -1,20 +1,65 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="homeContainer">
+    <div class="imgPerfil">
+      <button routerLink="/home/profile">
+        <ion-img src="../../assets/images/perfil.svg"></ion-img>
+      </button>
+    </div>
+    <div class="imgContent">
+      <ion-img src="../../assets/images/logo.png"></ion-img>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div>
+      <ion-card>
+        <ion-card-content>
+          <div class="imgCardHome">
+            <ion-img src="../../assets/images/presupuesto.png"></ion-img>
+            <ion-label>Presupuestos</ion-label>
+          </div>
+          <ion-list lines="inset">
+            <ion-item>
+              <ion-label class="listLabel">Crear nuevo</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="listLabel">Creados</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="listLabel">Envíados</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content>
+          <div class="imgCardHome">
+            <ion-img src="../../assets/images/ordenes.png"></ion-img>
+            <ion-label>Ordenes de trabajo</ion-label>
+          </div>
+          <ion-list lines="inset">
+            <ion-item>
+              <ion-label class="listLabel">Crear nuevo</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="listLabel">Creados</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="listLabel">Envíados</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content>
+          <ion-item lines="none">
+            <div class="imgCalendar">
+              <ion-img src="../../assets/images/calendar.png"></ion-img>
+              <ion-label class="listLabel">Agenda de servicios</ion-label>
+            </div>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
 </ion-content>
