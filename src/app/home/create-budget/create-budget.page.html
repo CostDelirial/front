@@ -1,0 +1,122 @@
+<ion-content>
+  <div class="homeContainer">
+    <div class="imgPerfil">
+      <button routerLink="/home/profile">
+        <ion-img src="../../assets/images/perfil.svg"></ion-img>
+      </button>
+    </div>
+    <div class="imgContent">
+      <ion-img src="../../assets/images/logo.png"></ion-img>
+    </div>
+
+    <div class="createBudgetContainer">
+      <p class="titleBudget">Crear presupuesto</p>
+      <div>
+        <ion-item>
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <ion-input type="text" placeholder="Nombre del cliente"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-input type="text" placeholder="Teléfono"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input type="text" placeholder="Correo electrónico"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelBudget" position="stacked">Trabajos a realizar</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelBudget" position="stacked">Observaciones</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+      </div>
+
+      <div class="materialBudget">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <div class="labelBudgetInput">
+                <ion-label class="labelBudgetInput" position="stacked">Conceptos de materiales y mano de obra</ion-label>
+              </div>
+              <ion-input class="inputBudget"></ion-input>
+            </ion-col>
+            <ion-col size="3">
+              <div class="labelBudgetInput">
+                <ion-label class="labelBudgetInput" position="stacked">Cantidad</ion-label>
+              </div>
+              <ion-input class="inputBudget"></ion-input>
+            </ion-col>
+            <ion-col size="3">
+              <div class="labelBudgetInput">
+                <ion-label class="labelBudgetInput" position="stacked">Precio</ion-label>
+              </div>
+              <ion-input class="inputBudget"></ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div>
+          <ion-button>Agregar</ion-button>
+        </div>
+      </div>
+
+      <div class="tableBudget">
+        <ion-grid>
+          <ion-row class="tableHeader">
+            <ion-col size="4">
+              <p>Material</p>
+            </ion-col>
+            <ion-col size="4">
+              <p>Cantidad</p>
+            </ion-col>
+            <ion-col size="4">
+              <p>Precio</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col class="tableContent" size="4">
+              <p>material 1</p>
+            </ion-col>
+            <ion-col class="tableContent" size="4">
+              <p>2</p>
+            </ion-col>
+            <ion-col class="tableContent" size="4">
+              <p>3000</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4"></ion-col>
+            <ion-col size="4"><p>Subtotal:</p></ion-col>
+            <ion-col class="tableContent" size="4">
+              <p>3000</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="timeBudget">
+        <p>Tiempo estimado de entrega</p>
+        <div>
+          <ion-img src="../../../assets/images/calendar.png"></ion-img>
+          <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime id="datetime"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </div>
+      </div>
+
+      <div class="footerBudget">
+        <ion-button>Guardar</ion-button>
+        <ion-button routerLink="/home">Cancelar</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

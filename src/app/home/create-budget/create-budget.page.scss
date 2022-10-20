@@ -1,0 +1,66 @@
+ion-icon {
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+.titleBudget {
+    font-family: 'SourceSansRegular';
+    font-size: 18px;
+    text-align: center;
+}
+
+.labelBudget {
+    font-family: 'SourceSansRegular';
+    font-size: 20px;
+}
+
+.materialBudget {
+    margin-top: 30px;
+    font-family: 'SourceSansRegular';
+    font-size: 15px;
+    text-align: center;
+}
+
+.inputBudget {
+    border-color: #9E9E9E;
+    border-width: 1px;
+    border-style: solid;
+    text-align: left;
+}
+
+.labelBudgetInput {
+    height: 60px;
+}
+
+.tableBudget {
+    margin-top: 30px;
+}
+
+.timeBudget {
+    p {
+        text-align: center;
+        margin-top: 40px;
+    }
+    div {
+        display: flex;
+    }
+    ion-img {
+        width: 50px;
+        margin-right: 15px;
+    }
+}
+
+ion-datetime {
+    color: #000000;
+}
+
+.footerBudget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+
+    button {
+        width: 30%;
+    }
+}

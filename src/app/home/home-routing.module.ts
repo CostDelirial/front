@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'create-budget',
+    loadChildren: () => import('./create-budget/create-budget.module').then( m => m.CreateBudgetPageModule)
   }
 ];
 
