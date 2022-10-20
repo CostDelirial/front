@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'create-budget',
     loadChildren: () => import('./create-budget/create-budget.module').then( m => m.CreateBudgetPageModule)
+  },
+  {
+    path: 'budget-table',
+    loadChildren: () => import('./budget-table/budget-table.module').then( m => m.BudgetTablePageModule)
   }
 ];
 

@@ -10,7 +10,7 @@
     </div>
 
     <div class="createBudgetContainer">
-      <p class="titleBudget">Crear presupuesto</p>
+      <p class="titleGeneral">Crear presupuesto</p>
       <div>
         <ion-item>
           <ion-icon name="person-circle-outline"></ion-icon>
@@ -34,31 +34,33 @@
         </ion-item>
       </div>
 
-      <div class="materialBudget">
+      <div class="materialBudget" [formGroup]="formMaterial">
         <ion-grid>
           <ion-row>
             <ion-col size="6">
               <div class="labelBudgetInput">
                 <ion-label class="labelBudgetInput" position="stacked">Conceptos de materiales y mano de obra</ion-label>
               </div>
-              <ion-input class="inputBudget"></ion-input>
+              <ion-input class="inputBudget" formControlName="material"></ion-input>
             </ion-col>
             <ion-col size="3">
               <div class="labelBudgetInput">
                 <ion-label class="labelBudgetInput" position="stacked">Cantidad</ion-label>
               </div>
-              <ion-input class="inputBudget"></ion-input>
+              <ion-input class="inputBudget" formControlName="quantity"
+                         type="number" onkeypress="return event.charCode>=48 && event.charCode<=57" required></ion-input>
             </ion-col>
             <ion-col size="3">
               <div class="labelBudgetInput">
                 <ion-label class="labelBudgetInput" position="stacked">Precio</ion-label>
               </div>
-              <ion-input class="inputBudget"></ion-input>
+              <ion-input class="inputBudget" formControlName="price"
+                         type="number" onkeypress="return event.charCode>=48 && event.charCode<=57" required></ion-input>
             </ion-col>
           </ion-row>
         </ion-grid>
         <div>
-          <ion-button>Agregar</ion-button>
+          <ion-button (click)="addMaterial()" [disabled]="!formMaterial.valid">Agregar</ion-button>
         </div>
       </div>
 
@@ -77,23 +79,31 @@
           </ion-row>
         </ion-grid>
 
-        <ion-grid>
-          <ion-row>
+        <ion-grid *ngIf="materialsArray.length > 0">
+          <ion-row *ngFor="let material of materialsArray">
             <ion-col class="tableContent" size="4">
-              <p>material 1</p>
+              <p>{{ material.material }}</p>
             </ion-col>
             <ion-col class="tableContent" size="4">
-              <p>2</p>
+              <p>{{ material.quantity }}</p>
             </ion-col>
             <ion-col class="tableContent" size="4">
-              <p>3000</p>
+              <p>{{ material.price | currency: 'USD' }}</p>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col size="4"></ion-col>
             <ion-col size="4"><p>Subtotal:</p></ion-col>
             <ion-col class="tableContent" size="4">
-              <p>3000</p>
+              <p>{{ subtotal | currency: 'USD' }}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="materialsArray.length === 0">
+          <ion-row>
+            <ion-col class="tableContent titleGeneral" size="12">
+              <p>No hay material agregado</p>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -107,7 +117,7 @@
 
           <ion-modal [keepContentsMounted]="true">
             <ng-template>
-              <ion-datetime id="datetime"></ion-datetime>
+              <ion-datetime id="datetime" (ionChange)="getDate($event)"></ion-datetime>
             </ng-template>
           </ion-modal>
         </div>
@@ -115,7 +125,7 @@
 
       <div class="footerBudget">
         <ion-button>Guardar</ion-button>
-        <ion-button routerLink="/home">Cancelar</ion-button>
+        <ion-button (click)="cancelBudget()">Cancelar</ion-button>
       </div>
     </div>
   </div>
