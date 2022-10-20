@@ -1,0 +1,59 @@
+<ion-content>
+  <div class="homeContainer">
+    <div class="imgPerfil">
+      <button routerLink="/home/profile">
+        <ion-img src="../../assets/images/perfil.svg"></ion-img>
+      </button>
+    </div>
+    <div class="imgContent">
+      <ion-img src="../../assets/images/logo.png"></ion-img>
+    </div>
+
+    <p class="titleGeneral">Presupuestos creados</p>
+    <div>
+      <ion-grid>
+        <ion-row class="tableHeader titleTable">
+          <ion-col size="2">
+            <p>Acción</p>
+          </ion-col>
+          <ion-col size="3">
+            <p>No presup.</p>
+          </ion-col>
+          <ion-col size="4">
+            <p>Nombre de cliente</p>
+          </ion-col>
+          <ion-col size="3">
+            <p>Fecha</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row *ngFor="let budget of budgetArray">
+          <ion-col class="tableContent" size="2">
+            <p>
+              <ion-checkbox></ion-checkbox>
+            </p>
+          </ion-col>
+          <ion-col class="tableContent" size="3">
+            <p>RC-0000</p>
+          </ion-col>
+          <ion-col class="tableContent" size="4">
+            <p>Jean Zuñiga</p>
+          </ion-col>
+          <ion-col class="tableContent" size="3">
+            <p>20/10/22</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="footerBudgetCreated">
+      <ion-button>Envíar</ion-button>
+      <ion-button>Editar</ion-button>
+    </div>
+    <div class="backBudgetCreated">
+      <ion-button routerLink="/home">Regresar</ion-button>
+    </div>
+  </div>
+</ion-content>
